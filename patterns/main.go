@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/lucabecci/patterns/patterns/builder/gobuilder"
 )
 
-func Main() {
+func main() {
 	fmt.Println("Main GO control patterns")
+	gobuilder.Process()
 }
