@@ -23,7 +23,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "rootDirs": ["patterns"]
+    "rootDir": "./patterns"
   },
   "exclude": ["node_modules", "test"],
   "include": [
