@@ -6,4 +6,4 @@ class Main {
 
 (() => {
     Main.process()
-})
+})()
