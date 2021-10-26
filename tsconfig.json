@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "sourceMap": false,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "declaration": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": false,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "rootDirs": ["patterns"]
+  },
+  "exclude": ["node_modules", "test"],
+  "include": [
+    "./patterns/",
+  ],
+}
