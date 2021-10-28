@@ -1,4 +1,4 @@
-import {InterfacePost} from './interfaces'
+import {InterfacePost, InterfaceTweet} from './interfaces'
 
 
 class Lib {
@@ -11,6 +11,15 @@ class Lib {
                 likes: Math.round(Math.random() * 300 ** t) 
             }
         }) 
+    }
+    public static fakeFetchTweets(): InterfaceTweet[]{
+      return [1,2,3].map((t) => {
+        return {
+          id: Math.random() ** t + "",
+          description: `This is a tweet`,
+          favs: Math.round(Math.random() * 20 ** t) 
+        }
+      })
     }
 }
 

@@ -7,7 +7,6 @@ export interface InterfacePost{
 
 export interface InterfaceTweet{
     id: string,
-    name: string,
     description: string,
-    likes: number
+    favs: number
 } 

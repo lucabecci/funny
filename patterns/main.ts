@@ -1,8 +1,7 @@
-import Pattern from './builder/pattern'
-
+import IntegrationProcess from "./builder/example/integration"
 class Main {
     static process(){
-        new Pattern.GenerateBuilderPattern().main()
+      IntegrationProcess.process()
     }
 }
 

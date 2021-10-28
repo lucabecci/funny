@@ -1,7 +1,8 @@
-import Lib from "patterns/utils/@lib"
+import Lib from "../../utils/libs"
 
 interface InterfaceIntegrationBuilder {
-    generatePostsMethod: () => void 
+    generatePostMethod: () => void;
+    generateTweetMethod: () => void;
 }
 
 class IntegrationBuilder implements InterfaceIntegrationBuilder{
@@ -12,21 +13,65 @@ class IntegrationBuilder implements InterfaceIntegrationBuilder{
     public reset(){
         this.integration = new Integration()
     }
-    public generatePostsMethod(){
-        this.integration.getPosts = Object.assign(this, (type: string) => {
+    public generatePostMethod(){
+        this.integration.getPosts = function(type: string){
             console.log(Lib.fakeFetchPosts(type))
-        })
+        }
     }
 
-    public generateTweetsMethod(){
-        this.integration.getPosts = Object.assign(this, (type: string) => {
-            console.log(Lib.fakeFetchPosts(type))
-        })
+    public generateTweetMethod(){
+        this.integration.getTweets= function(){
+            console.log(Lib.fakeFetchTweets())
+        }
     }
+
+    public getIntegration(): InterfaceIntegration{
+      const integration = this.integration
+      this.reset()
+      return integration
+  }
 }
 
 interface InterfaceIntegration {
     getPosts?: (type: string) => void
+    getTweets?: () => void
 }
 
 class Integration implements InterfaceIntegration{}
+
+class IntegrationDirector {
+  private builder: InterfaceIntegrationBuilder
+  
+  public setBuilder(builder: InterfaceIntegrationBuilder): void {
+    this.builder = builder
+  }
+
+  public buildTwitterIntegration(): void {
+    this.builder.generateTweetMethod()
+  }
+
+  public buildInstagramIntegration(): void {
+    this.builder.generatePostMethod()
+  }
+}
+
+
+class ProcessBuilderIntegrations{
+  private static director: IntegrationDirector = new IntegrationDirector
+  public static process(): void {
+    const builder = new IntegrationBuilder()
+    this.director.setBuilder(builder)
+
+    console.log("Twitter Build")
+    this.director.buildTwitterIntegration()
+    builder.getIntegration().getTweets!()
+
+    console.log("\n")
+
+    console.log("Instagram Build")
+    this.director.buildInstagramIntegration()
+    builder.getIntegration().getPosts!("Instagram")
+  }
+}
+
+export default ProcessBuilderIntegrations
