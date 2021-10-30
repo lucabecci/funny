@@ -13,6 +13,7 @@
     "husky": "^7.0.4"
   },
   "scripts": {
-    "pattern": "npx ts-node patterns/main.ts"
+    "pattern": "npx ts-node patterns/main.ts",
+    "algos": "npx ts-node"
   }
 }
