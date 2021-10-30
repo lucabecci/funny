@@ -17,3 +17,5 @@ class LinearSearch {
 (function(){
     new LinearSearch().main()
 })()
+
+//https://www.devmaking.com/learn/algorithms/linear-search/
