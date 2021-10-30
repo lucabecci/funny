@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	bubblesort "github.com/lucabecci/patterns/algorithms/sorts/bubbleSort"
+	insertionsort "github.com/lucabecci/patterns/algorithms/sorts/insertionSort"
 )
 
 func main() {
 	fmt.Println("Algorithms main process")
-	bubblesort.Process()
+	insertionsort.Process()
 }
