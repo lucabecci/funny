@@ -8,5 +8,5 @@ import (
 
 func main() {
 	fmt.Println("Algorithms main process")
-	binarysearch.Process()
+	binarysearch.ProcessRecursive()
 }
