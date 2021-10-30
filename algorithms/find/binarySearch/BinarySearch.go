@@ -37,7 +37,7 @@ func BinarySearchRecursive(arr []int, t int, l int, r int) bool {
 
 func Process() {
 	arr := []int{22, 33, 55, 67, 77, 88, 99, 122, 323, 4556, 7657}
-	result := BinarySearchIterative(arr, 4556, 0, len(arr))
+	result := BinarySearchIterative(arr, 4556, 0, len(arr)-1)
 	if result != true {
 		log.Panic("Value not find")
 	} else {
@@ -47,7 +47,7 @@ func Process() {
 
 func ProcessRecursive() {
 	arr := []int{22, 33, 55, 67, 77, 88, 99, 122, 323, 4556, 7657}
-	result := BinarySearchRecursive(arr, 4556, 0, len(arr))
+	result := BinarySearchRecursive(arr, 4556, 0, len(arr)-1)
 	if result != true {
 		log.Panic("Value not find")
 	} else {

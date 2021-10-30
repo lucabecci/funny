@@ -27,7 +27,7 @@ class BinarySearch{
   
   public mainRecursive(): void {
     const arr: number[] = [22,34,66,99,124,421,576,1135,2388,4090]
-    const result: boolean = this.processRecursive(arr, 66, 0, arr.length)
+    const result: boolean = this.processRecursive(arr, 66, 0, arr.length - 1)
     if(result){
       console.log("Value find")
     }else{
@@ -37,7 +37,7 @@ class BinarySearch{
 
   public main(): void {
     const arr: number[] = [22,34,66,99,124,421,576,1135,2388,4090]
-    const result: boolean = this.process(arr, 66, 0, arr.length)
+    const result: boolean = this.process(arr, 66, 0, arr.length - 1)
     if(result){
       console.log("Value find")
     }else {

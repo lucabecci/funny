@@ -1,0 +1,29 @@
+package interpolationsearch
+
+func interpolationsearch(arr []int, t int) bool {
+	var (
+		l, h   = 0, len(arr) - 1
+		lv, hv = arr[l], arr[h]
+	)
+	for lv != hv && (lv <= t) && (t <= hv) {
+		m := l + int(float64(float64((t-lv)*(h-l)/float64(hv-lv))))
+
+		if arr[m] == t {
+			for m > 0 && arr[m-1] == t {
+				m--
+			}
+			return true
+		}
+
+		if arr[m] > t {
+			h, lv = m-1, arr[h]
+		} else {
+			l, lv = m+1, arr[l]
+		}
+	}
+	if t == lv {
+		return true
+	}
+
+	return false
+}

@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	binarysearch "github.com/lucabecci/patterns/algorithms/find/binarySearch"
+	interpolationsearch "github.com/lucabecci/patterns/algorithms/find/interpolationSearch"
 )
 
 func main() {
 	fmt.Println("Algorithms main process")
-	binarysearch.ProcessRecursive()
+	interpolationsearch.Process()
 }
