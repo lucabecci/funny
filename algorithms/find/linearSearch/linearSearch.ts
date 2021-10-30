@@ -18,4 +18,3 @@ class LinearSearch {
     new LinearSearch().main()
 })()
 
-//https://www.devmaking.com/learn/algorithms/linear-search/
