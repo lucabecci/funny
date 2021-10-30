@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	interpolationsearch "github.com/lucabecci/patterns/algorithms/find/interpolationSearch"
+	bubblesort "github.com/lucabecci/patterns/algorithms/sorts/bubbleSort"
 )
 
 func main() {
 	fmt.Println("Algorithms main process")
-	interpolationsearch.Process()
+	bubblesort.Process()
 }
