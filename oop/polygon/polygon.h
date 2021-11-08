@@ -1,3 +1,5 @@
+#ifndef POLYGON_H
+#define POLYGON_H
 #include <string>
 
 class Polygon {
@@ -6,12 +8,14 @@ private:
 protected:
     std::string name;  
 public:
-    Polygon(const int num_sides, const std::string & name);
+    Polygon(int num_sides, const std::string & name);
     
-    int GetNumSides(void) const;
-    void SetNumSides(const int num_sides);
+    int GetNumSides(void);
+    void SetNumSides(int num_sides);
 
-    std::string & GetName(void) const;
-    void SetName(const std::string & name);
+    std::string & GetName(void);
+    void SetName(std::string & name);
 
 }; 
+
+#endif
