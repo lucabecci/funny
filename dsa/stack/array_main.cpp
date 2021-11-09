@@ -8,7 +8,7 @@ class Stack
     int top;
 
   public:
-    int a[20];
+    int a[2];
 
     Stack() {top = -1;}
     bool push(int x);
@@ -19,7 +19,7 @@ class Stack
 
 bool Stack::push(int x)
 {
-    if(top >= (20 - 1))
+    if(top >= (2 - 1))
     {
       std::cout << "Stack overflow!" << std::endl;
       return false;
