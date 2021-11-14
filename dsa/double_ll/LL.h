@@ -11,7 +11,9 @@ class LL {
     Node* Get(void);
     void Push(Node** head, int data);
     void Append(Node** head, int data);
-    void ForwardPrint(Node* node);
+    void InsertAfter(Node* prev, int data);
+    void ForwardPrint(Node* head);
+    void ReversePrint(Node* head);
 };
 
 LL::LL(int new_data)
@@ -70,6 +72,29 @@ void LL::Append(Node** head, int data)
   return;
 }
 
+void LL::InsertAfter(Node* prev, int data)
+{
+  if(prev == NULL)
+  {
+    std::cout << "ERROR! the prev node is null" << std::endl;
+    return;
+  }
+
+  Node* new_node = new Node();
+
+  new_node->data = data;
+  new_node->next = prev->next;
+
+  prev->next = new_node;
+  
+  new_node->prev = prev;
+
+  if(new_node->next == NULL)
+  {
+    new_node->next->prev = new_node;
+  }
+}
+
 void LL::ForwardPrint(Node* head)
 {
   std::cout << "Traversal forward direction" << std::endl;
@@ -78,6 +103,22 @@ void LL::ForwardPrint(Node* head)
   {
     std::cout <<  head->data << std::endl;
     head = head->next;
+  }
+}
+
+void LL::ReversePrint(Node* head)
+{
+  Node* last;
+  while(head != NULL)
+  {
+    last = head;
+    head = head->next;
+  }
+
+  while(last != NULL)
+  {
+    std::cout << last->data << std::endl;
+    last = last->prev;
   }
 }
 #endif
