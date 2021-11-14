@@ -1,4 +1,4 @@
-package mergesort
+package sort
 
 import "fmt"
 
@@ -39,7 +39,7 @@ func merge(a []int, b []int) []int {
 	return r
 }
 
-func Process() {
+func ProcessMerge() {
 	arr := []int{23, 53, 64, 92, 643, 3, 6545, 1453, 3421, 12, 5}
 	fmt.Println("Before:", arr)
 	arr = sort(arr)

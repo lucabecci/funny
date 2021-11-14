@@ -10,11 +10,9 @@ int main(int argc, char *argv[])
   dll.Append(&head, 330);
   dll.InsertAfter(head->next, 3000);
   std::cout << "Forward Print:" << std::endl;
-  dll.ForwardPrint(head); 
-  std::cout << "Pushing 444 into double linked list" << std::endl;
-  dll.Push(&head, 444);
-  dll.RemoveOne(head, 3000);
-  std::cout << "Reverse Print:" << std::endl;
-  dll.ReversePrint(head);
+  dll.ForwardPrint(head);
+  std::cout << "Reversing the dll" << std::endl;
+  dll.Reverse(&head);
+  dll.ForwardPrint(head);
   return 0;
 }

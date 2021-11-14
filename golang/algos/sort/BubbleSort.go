@@ -1,4 +1,4 @@
-package bubblesort
+package sort
 
 import "fmt"
 
@@ -16,7 +16,7 @@ func bubbleSort(arr []int) []int {
 	return arr
 }
 
-func Process() {
+func ProcessBubble() {
 	arr := []int{22, 1, 4, 7, 12, 55, 2, 551, 242}
 	fmt.Println("Before:", arr)
 	arr = bubbleSort(arr)

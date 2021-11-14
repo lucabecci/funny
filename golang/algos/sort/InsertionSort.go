@@ -1,4 +1,4 @@
-package insertionsort
+package sort
 
 import "fmt"
 
@@ -23,7 +23,7 @@ func insertionSort(arr []int) []int {
 	return arr
 }
 
-func Process() {
+func ProcessInsertion() {
 	arr := []int{12, 11, 13, 5, 6}
 	fmt.Println("Before:", arr)
 	insertionSort(arr)

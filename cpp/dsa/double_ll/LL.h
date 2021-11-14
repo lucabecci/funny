@@ -15,6 +15,7 @@ class LL {
     void ForwardPrint(Node* head);
     void ReversePrint(Node* head);
     void RemoveOne(Node* head, int data);
+    void Reverse(Node** head);
 };
 
 
@@ -134,9 +135,29 @@ void LL::RemoveOne(Node* head, int data)
       std::cout << "Deleting the value " << head->data << std::endl;
       head->next->prev = head->prev;
       head->prev->next = head->next;
-        
+      return;  
     }
     head = head->next;
+  }
+  std::cout << "ERROR! " << data << " not found" << std::endl;
+}
+
+void LL::Reverse(Node** head)
+{
+  Node *t = NULL;
+  Node *current = *head;
+
+  while(current != NULL)
+  {
+    t = current->prev;
+    current->prev = current->next;
+    current->next = t;
+    current = current->prev;
+  }
+
+  if(t != NULL)
+  {
+    *head = t->prev;
   }
 }
 #endif
