@@ -14,7 +14,9 @@ class LL {
     void InsertAfter(Node* prev, int data);
     void ForwardPrint(Node* head);
     void ReversePrint(Node* head);
+    void RemoveOne(Node* head, int data);
 };
+
 
 LL::LL(int new_data)
 {
@@ -119,6 +121,22 @@ void LL::ReversePrint(Node* head)
   {
     std::cout << last->data << std::endl;
     last = last->prev;
+  }
+}
+
+
+void LL::RemoveOne(Node* head, int data)
+{
+  while(head != NULL)
+  {
+    if(head->data == data)
+    {
+      std::cout << "Deleting the value " << head->data << std::endl;
+      head->next->prev = head->prev;
+      head->prev->next = head->next;
+        
+    }
+    head = head->next;
   }
 }
 #endif
