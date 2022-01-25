@@ -3,24 +3,24 @@ package dsa
 import "fmt"
 
 type LinkedList struct {
-	Head *Node
-	Size int
+	head *Node
+	size int
 }
 
 func (l *LinkedList) InsertEnd(v int) {
 	n := Node{}
 	n.value = v
-	if l.Size == 0 {
-		l.Head = &n
-		l.Size++
+	if l.size == 0 {
+		l.head = &n
+		l.size++
 		return
 	}
 
-	ptr := l.Head
-	for i := 0; i < l.Size; i++ {
+	ptr := l.head
+	for i := 0; i < l.size; i++ {
 		if ptr.next == nil {
 			ptr.next = &n
-			l.Size++
+			l.size++
 			return
 		}
 		ptr = ptr.next
@@ -36,12 +36,12 @@ func (l *LinkedList) InsertAt(pos int, v int) {
 	}
 
 	if pos == 0 {
-		l.Head = &newN
-		l.Size++
+		l.head = &newN
+		l.size++
 		return
 	}
 
-	if pos > l.Size {
+	if pos > l.size {
 		return
 	}
 
@@ -49,12 +49,12 @@ func (l *LinkedList) InsertAt(pos int, v int) {
 	newN.next = n
 	prevN := l.GetAt(pos - 1)
 	prevN.next = &newN
-	l.Size++
+	l.size++
 }
 
 func (l *LinkedList) Search(val int) int {
-	ptr := l.Head
-	for i := 0; i < l.Size; i++ {
+	ptr := l.head
+	for i := 0; i < l.size; i++ {
 		if ptr.value == val {
 			return i
 		}
@@ -64,11 +64,11 @@ func (l *LinkedList) Search(val int) int {
 }
 
 func (l *LinkedList) GetAt(pos int) *Node {
-	ptr := l.Head
+	ptr := l.head
 	if pos < 0 {
 		return ptr
 	}
-	if pos > (l.Size - 1) {
+	if pos > (l.size - 1) {
 		return nil
 	}
 	for i := 0; i < pos; i++ {
@@ -78,12 +78,12 @@ func (l *LinkedList) GetAt(pos int) *Node {
 }
 
 func (l *LinkedList) Print() {
-	if l.Size == 0 {
+	if l.size == 0 {
 		fmt.Println("0 nodes in your Linked List")
 		return
 	}
-	ptr := l.Head
-	for i := 0; i < l.Size; i++ {
+	ptr := l.head
+	for i := 0; i < l.size; i++ {
 		fmt.Println(ptr.value)
 		ptr = ptr.next
 	}
