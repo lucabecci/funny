@@ -8,7 +8,16 @@ import (
 
 func main() {
 	fmt.Println("DSA main process")
-	DoubleLinkedList()
+	Queue()
+}
+
+func Queue() {
+	fmt.Println("Queue test")
+	queue := dsa.InstanceQueue(20)
+	queue.Enqueue(3)
+	queue.Enqueue(233)
+	queue.Enqueue(1)
+	queue.Print()
 }
 
 func LinkedList() {
