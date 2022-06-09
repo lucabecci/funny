@@ -9,6 +9,12 @@ type Queue_LL struct {
 	size  int
 }
 
+func InstanceQueueLinkedList(size int) *Queue_LL {
+	return &Queue_LL{
+		size: size,
+	}
+}
+
 func (q *Queue_LL) Enqueue(v int) {
 	new_q := Node{}
 	new_q.value = v

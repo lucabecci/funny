@@ -13,11 +13,11 @@ func main() {
 
 func Queue() {
 	fmt.Println("Queue test")
-	queue := dsa.InstanceQueue(20)
+	queue := dsa.InstanceQueueLinkedList(25)
 	queue.Enqueue(3)
 	queue.Enqueue(233)
 	queue.Enqueue(1)
-	queue.Print()
+	// queue.Print()
 }
 
 func LinkedList() {
